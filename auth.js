@@ -14,7 +14,7 @@ function verifyHash(data, secret) {
 }
 
 // Check if the hash is valid
-const secret = 'D?5#*stg?5cNJO1@9o(IAe>7OY33L"'; // Your bot's secret key
+const secret = 'D?5#*stg?5cNJO1@9o(IAe>7OY33L'; // Your bot's secret key
 const dataToCheck = `${queryId}\n${authDate}\n${JSON.stringify(user)}`;
 const valid = verifyHash(dataToCheck, secret);
 
