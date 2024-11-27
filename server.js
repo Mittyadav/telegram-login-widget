@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const crypto = require('crypto');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
