@@ -27,8 +27,10 @@ app.post('/telegram-login', (req, res) => {
         .map((key) => `${key}=${user[key]}`)
         .join('\n');
 
+    // Create the hash of the string using the secret key
     const hash = crypto.createHmac('sha256', secretKey).update(checkString).digest('hex');
 
+    // If the hash doesn’t match, return a verification error
     if (hash !== user.hash) {
         return res.status(403).send({ success: false, message: 'Data verification failed.' });
     }
@@ -41,6 +43,6 @@ app.post('/telegram-login', (req, res) => {
 });
 
 // Start the server
-app.listen(8080, () => {
-    console.log(`Server is running on http://localhost:${8080}`);
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
