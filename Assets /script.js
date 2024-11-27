@@ -4,7 +4,7 @@ function handleTelegramLogin(user) {
         console.log("User logged in:", user);
         
         // You can make an API call to your server here
-        fetch('/telegram-login', {
+        fetch('https://mittyadav.github.io/telegram-login-widget/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ function loadTelegramWidget(botUsername) {
     script.setAttribute('data-telegram-login', botUsername);
     script.setAttribute('data-size', 'large');
     script.setAttribute('data-radius', '10');
-    script.setAttribute('data-auth-url', '/https://mittyadav.github.io/telegram-login-widget/'); // Adjust to your server endpoint
+    script.setAttribute('data-auth-url', 'https://mittyadav.github.io/telegram-login-widget/'); // Adjust to your server endpoint
     script.setAttribute('data-request-access', 'write');
     document.getElementById('telegram-login-container').appendChild(script);
 }
